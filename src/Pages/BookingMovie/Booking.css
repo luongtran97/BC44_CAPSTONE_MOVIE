@@ -1,0 +1,84 @@
+.screen {
+    border-bottom: 50px solid rgb(255, 159, 95);
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 100;
+    width: 100%;
+    font-size: 25px;
+    color: #fff;
+  }
+
+
+.seat{
+  background-color: #ffffa8;
+  border: 2px solid #422800;
+  border-radius: 20px;
+  color: #422800;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  width: 60px;
+  box-shadow: 4px 4px 0 0 #422800;
+}
+.buttonType_normal{
+  background-color: #ffffa8;
+  border: 2px solid #422800;
+  border-radius: 20px;
+  color: #422800;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  width: 60px;
+  box-shadow: 4px 4px 0 0 #422800;
+}
+.buttonType_vip{
+  background-color: #b388ff;
+  border: 2px solid #422800;
+  border-radius: 20px;
+  color: #422800;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  width: 60px;
+  box-shadow: 4px 4px 0 0 #422800;
+}
+.buttonType_reserved{
+  background-color: #757575;
+  border: 2px solid #422800;
+  border-radius: 20px;
+  color: #422800;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  width: 60px;
+  box-shadow: 4px 4px 0 0 #422800;
+  cursor: no-drop;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.buttonType_select{
+  background-color: rgb(234 88 12);
+  border: 2px solid #422800;
+  border-radius: 20px;
+  color: #422800;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  width: 60px;
+  box-shadow: 4px 4px 0 0 #422800;
+}
+
+
+.bookingTicket{
+  position: absolute;
+  top: 63%;
+  left: 80%;
+  transform: translate(-50%,-50%);
+}
+

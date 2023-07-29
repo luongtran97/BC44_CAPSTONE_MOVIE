@@ -1,0 +1,39 @@
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-carousel
+  .slick-dots
+  li
+  button::after {
+  background-color: rgb(234 88 12);
+}
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-carousel
+  .slick-list
+  .slick-slide.slick-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.newsTitle {
+  color: #4280bf;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 18px;
+}
+.newsTitle:hover {
+  color: rgb(234 88 12);
+}
+
+.news p {
+  color: #abb7c4;
+  line-height: 28px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(234 88 12);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(251 146 60);
+}

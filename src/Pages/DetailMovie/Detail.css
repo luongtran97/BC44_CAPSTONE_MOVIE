@@ -1,0 +1,15 @@
+
+
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-progress.ant-progress-circle .ant-progress-text{
+    color: rgb(234, 88, 12) ;
+    font-weight: 700;
+}
+
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open{
+    background-color: rgba(0, 0, 0, 0.75) !important;
+
+}
+.ReactModal__Content.ReactModal__Content--after-open{
+    border: 1px solid rgb(234, 88, 12) !important;
+}

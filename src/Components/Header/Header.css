@@ -1,0 +1,8 @@
+.headerColor{
+    background-color: #020d18;
+}
+
+.headerColor a{
+    text-decoration: none;
+    transition: all .5s;
+}
