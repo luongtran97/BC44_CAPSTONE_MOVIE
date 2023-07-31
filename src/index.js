@@ -7,13 +7,15 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import bookingSlice from "./redux/bookingSlice";
 import userSlice from "./redux/userSlice";
+import sipnnerSlice from "./redux/sipnnerSlice";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-let store = configureStore({
+export const store = configureStore({
   reducer: {
     bookingSlice: bookingSlice,
-    userSlice : userSlice
+    userSlice : userSlice,
+    spinnerSlice : sipnnerSlice,
   },
 });
 

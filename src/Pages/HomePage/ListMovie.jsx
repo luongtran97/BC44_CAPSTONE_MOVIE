@@ -32,7 +32,7 @@ export default function ListMovie() {
             />
           }
         >
-          <Meta title={item.tenPhim} />
+          <Meta style={{textAlign:"center"}} title={item.tenPhim} />
           <NavLink
             className="w-full bg-orange-600 inline-block font-bold  text-white rounded-lg text-center mt-2 hover:scale-75 transition duration-550"
             to={`/detail/${item.maPhim}`}
@@ -54,7 +54,7 @@ export default function ListMovie() {
     >
       <div className="container">
         <p className=" italic text-orange-600 text-5xl font-bold py-5 ">List Flim</p>
-        <div className=" grid grid-cols-4">
+        <div className=" grid xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 ">
         
           {renderListFlim()}</div>
             </div>

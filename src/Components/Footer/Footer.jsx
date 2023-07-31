@@ -57,6 +57,14 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        <div className="mt-16 border-t border-gray-100 pt-8">
+          <p className="text-center text-lg leading-relaxed text-white bg-black">
+          © Project 2023. All rights reserved.
+          <br />
+          A Project Created by : 
+          <a href="https://www.facebook.com/tran.luong.9678/" target="_blank" className="text-orange-600 underline hover:text-orange-400">Trần Văn Lượng </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

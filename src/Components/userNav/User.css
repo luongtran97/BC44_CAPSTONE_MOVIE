@@ -4,3 +4,12 @@
  :where(.css-dev-only-do-not-override-1jr9qlj).ant-drawer .ant-drawer-header{
  border-bottom: 1px solid #fff;
  }
+
+.scroll-to-top:hover {
+  background-color: rgb(234 , 88, 12);
+  transition: all 0.5s;
+}
+#Layer_1{
+  width: 40px;
+  height: 35px;
+}

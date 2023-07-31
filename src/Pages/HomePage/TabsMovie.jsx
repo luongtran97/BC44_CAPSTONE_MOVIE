@@ -19,9 +19,9 @@ export default function TabsMovie() {
 
 
   let renderDsPhim = (dsp) => {
-    return dsp.map((phim) => {
+    return dsp.map((phim,index) => {
       return (
-        <div className="p-5 flex space-x-5">
+        <div key={index} className="p-5 flex space-x-5">
           <img
             src={phim.hinhAnh}
             alt="hinhAnh"
@@ -81,7 +81,7 @@ export default function TabsMovie() {
   return (
     <div className="py-5 pt-20" style={{ background: "#020d18" }}>
       <div className="container tabs rounded p-10  bg-white">
-        <p className="pb-10 text-orange-600 font-bold text-5xl italic">
+        <p className="pb-10 text-orange-600 font-bold xl:text-5xl md:text-4xl sm:text-3xl italic">
           NOW SHOWING
         </p>
         <Tabs defaultActiveKey="1" items={renderHeThongRap()}></Tabs>

@@ -3,6 +3,9 @@ import { https } from "../../Services/config";
 import "./User.css";
 import { Button, Form, Input, message } from "antd";
 import { regex } from "../../Constant/regex";
+import ReactModal from "react-modal";
+import { useSpring, animated } from "react-spring";
+import { CheckOutlined } from "@ant-design/icons";
 export default function UserInfo() {
   const [userInfo, setUserInfo] = useState([]);
   useEffect(() => {
@@ -13,6 +16,7 @@ export default function UserInfo() {
       })
       .catch((err) => {});
   }, [] );
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const onFinish = (value) => {
     let data = {
       ...value,
@@ -144,22 +148,59 @@ export default function UserInfo() {
               span: 16,
             }}
           >
-            <Button size="large" htmlType="submit">
-              <span classname="text-white text-xl font-bold">Update</span>
+            <Button onClick={()=>{
+              openModal()
+            }} size="large" htmlType="submit">
+              <span classname="text-white text-xl font-bold ">Update</span>
             </Button>
           </Form.Item>
         </Form>
       );
     }
   };
- useEffect(() => {  
-
-   
-   renderForm()
- },[])
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%,-50%) ",
+      width: "auto",
+      height: "auto",
+      borderRadius: "30px",
+      background: "#020d18",
+    },
+  };
+  const props2 = useSpring({
+    opacity: modalIsOpen ? 1 : 0,
+    transform: modalIsOpen ? "translateY(0%)" : "translateY(-100%)",
+  });
 
   return (
     <div className="h-screen user">
+       <ReactModal
+        onRequestClose={closeModal}
+        isOpen={modalIsOpen}
+        style={customStyles}
+      >
+        <animated.div style={props2}>
+          <div className="text-center">
+            <div className="text-orange-600 rounded-full text-5xl">
+              <CheckOutlined />
+            </div>
+            <p className="font-bold text-2xl pt-2 text-white">
+              UPDATE SUCCESSFUL!
+        </p>
+          </div>
+        </animated.div>
+      </ReactModal>
       <div className=" xl:scale-90 md:scale-125 flex h-full w-full  justify-center">
         <div className="w-full md:w-1/2">
           <div className="text-center py-2">

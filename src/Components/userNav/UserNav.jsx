@@ -4,16 +4,17 @@ import { NavLink } from "react-router-dom";
 import { LocalStoreService } from "../../Services/LocalStoreService";
 import { Button, Drawer } from "antd";
 import "./User.css";
+import { ReactComponent as MySVG } from "./free_icon_1.svg";
 import {
   HistoryOutlined,
   LogoutOutlined,
   MenuFoldOutlined,
 } from "@ant-design/icons";
+import ScrollToTop from "react-scroll-to-top";
 export default function UserNav() {
   const [open, setOpen] = useState(false);
 
   let user = useSelector((state) => state.userSlice.userInfo);
-
 
   let btnClass =
     "transition font-bold text-center hover:bg-orange-400 duration-300 px-4 py-2 rounded-xl mx-2 bg-white";
@@ -32,7 +33,7 @@ export default function UserNav() {
               style={{
                 fontSize: "25px",
                 color: "rgb(234 88 12)",
-                border:"none"
+                border: "none",
               }}
             />
           </Button>
@@ -66,49 +67,32 @@ export default function UserNav() {
     setOpen(false);
   };
 
-  const renderTitle = () => {
-    let dataLocal = LocalStoreService.getItem("USER_LOGIN");
-    if (dataLocal !== null) {
-      return (
-        <div className="flex items-center text-white space-x-3">
-          <img
-            className="w-12 h-12 rounded-full"
-            src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Hinh-sieu-nhan-mau-cam.jpg"
-            alt="img"
-          />
-          <div className="cursor-pointer">
-            <button>
-              <NavLink to="/userInfo">
-                <p>{user.hoTen} </p>
-                <p className="font-normal">View Profile</p>
-              </NavLink>
-            </button>
-          </div>
-        </div>
-      );
-    }
-  };
   return (
-    <div className="flex space-x-3  ">
+    <div className="flex space-x-3">
+      <ScrollToTop
+        color="orange"
+        smooth
+        component={<MySVG/>}
+      />
       {renderUser()}
       <Drawer
         style={{ background: "rgb(24 25 26)" }}
         title={
           <div className="flex items-center text-white space-x-3">
-          <img
-            className="w-12 h-12 rounded-full"
-            src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Hinh-sieu-nhan-mau-cam.jpg"
-            alt="img"
-          />
-          <div className="cursor-pointer">
-            <button>
-              <NavLink to="/userInfo">
-                <p>{ user !== null ? user.hoTen : ""} </p>
-                <p className="font-normal">View Profile</p>
-              </NavLink>
-            </button>
+            <img
+              className="w-12 h-12 rounded-full"
+              src="https://thuthuatnhanh.com/wp-content/uploads/2022/06/Hinh-sieu-nhan-mau-cam.jpg"
+              alt="img"
+            />
+            <div className="cursor-pointer">
+              <button>
+                <NavLink to="/userInfo">
+                  <p>{user !== null ? user.hoTen : ""} </p>
+                  <p className="font-normal">View Profile</p>
+                </NavLink>
+              </button>
+            </div>
           </div>
-        </div>
         }
         placement="left"
         onClose={onClose}

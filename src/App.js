@@ -10,12 +10,14 @@ import Layout from "./Layout/Layout";
 import HistoryBooking from "./Pages/HistoryBooking/HistoryBooking";
 import UserInfo from "./Pages/UserInfo/UserInfo";
 import { useSelector } from "react-redux";
+import Spinner from "./Components/Spinner/Spinner";
 
 function App() {
   let user = useSelector((state) => state.userSlice.userInfo);
 
   return (
     <div className="App">
+      <Spinner/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout contenPage={<HomePage />} />} />

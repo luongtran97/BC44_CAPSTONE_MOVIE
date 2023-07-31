@@ -1,4 +1,8 @@
-import { CheckOutlined, CloseCircleOutlined, CloseOutlined } from "@ant-design/icons";
+import {
+  CheckOutlined,
+  CloseCircleOutlined,
+  CloseOutlined,
+} from "@ant-design/icons";
 import { sortBy } from "lodash";
 import React, { useState } from "react";
 import { useEffect } from "react";
@@ -8,6 +12,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { datGhe } from "../../redux/bookingSlice";
 import { https } from "../../Services/config";
 import "./Booking.css";
+import { useSpring, animated } from "react-spring";
 export default function BookingMovie() {
   const navigate = useNavigate();
   const [ghe, setGhe] = useState([]);
@@ -17,6 +22,15 @@ export default function BookingMovie() {
   let user = useSelector((state) => state.userSlice.userInfo);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalIsOpen2, setModalIsOpen2] = useState(false);
+  const props = useSpring({
+    opacity: modalIsOpen ? 1 : 0,
+    transform: modalIsOpen ? "translateY(0%)" : "translateY(-100%)",
+  });
+  const props2 = useSpring({
+    opacity: modalIsOpen2 ? 1 : 0,
+    transform: modalIsOpen2 ? "translateY(0%)" : "translateY(-100%)",
+  });
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -228,12 +242,14 @@ export default function BookingMovie() {
         isOpen={modalIsOpen}
         style={customStyles}
       >
-        <div className="text-center">
-          <div className="text-orange-600 rounded-full text-5xl">
-            <CloseCircleOutlined />
+        <animated.div style={props2}>
+          <div className="text-center">
+            <div className="text-orange-600 rounded-full text-5xl">
+              <CloseCircleOutlined />
+            </div>
+            {renderAlert()}
           </div>
-          {renderAlert()}
-        </div>
+        </animated.div>
       </ReactModal>
       {/* modal success */}
       <ReactModal
@@ -241,10 +257,14 @@ export default function BookingMovie() {
         isOpen={modalIsOpen2}
         style={customStyles}
       >
-        <div className="text-orange-600 text-center rounded-full text-5xl">
-          <CheckOutlined />
-        </div>
-        <p className="font-bold text-2xl pt-2 text-white">Booking Successful</p>
+        <animated.div style={props2}>
+          <div className="text-orange-600 text-center rounded-full text-5xl">
+            <CheckOutlined />
+          </div>
+          <p className="font-bold text-2xl pt-2 text-white">
+            Booking Successful
+          </p>
+        </animated.div>
       </ReactModal>
       ;
       <div className="container">
