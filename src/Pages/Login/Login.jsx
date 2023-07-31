@@ -17,7 +17,6 @@ export default function Login() {
       .then((res) => {
         message.success("Đăng nhập thành công!");
         navigate("/");
-
         dispatch(setLogin(res.data.content))
         LocalStoreService.setItem(res.data.content,"USER_LOGIN")
 
@@ -27,7 +26,8 @@ export default function Login() {
         message.error(err.response.data.content);
       });
   };
-
+let dataLocal = LocalStoreService.getItem("USER_LOGIN")
+  console.log("🚀 ~ dataLocal:", dataLocal)
   return (
     <div className="flex items-center justify-center bg-orange-500 h-screen">
       <div className="container flex bg-white rounded p-5">

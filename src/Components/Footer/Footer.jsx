@@ -41,16 +41,16 @@ export default function Footer() {
             <div className="footerContent">
               <ul>
                 <li>
-                  <i class="fa fa-envelope"></i>
+                  <i className="fa fa-envelope"></i>
                   <span className="mx-2">contactme@gmai.com</span>
                 </li>
                 <li>
-                  <i class="fa fa-phone"></i>
+                  <i className="fa fa-phone"></i>
                   <span className="mx-2">090999999</span>
                 </li>
                 <li>
                   {" "}
-                  <i class="fa fa-map-marker-alt"></i>
+                  <i className="fa fa-map-marker-alt"></i>
                   <span className="mx-2">CyberSoft,Ho Chi Minh, Viet Nam</span>
                 </li>
               </ul>

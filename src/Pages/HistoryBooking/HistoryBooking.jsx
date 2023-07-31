@@ -1,4 +1,3 @@
-import Item from "antd/es/list/Item";
 import moment from "moment/moment";
 import React from "react";
 import { useEffect } from "react";
@@ -13,27 +12,28 @@ export default function HistoryBooking() {
       .post("api/QuanLyNguoiDung/ThongTinTaiKhoan")
       .then((res) => {
         setUserInfo(res.data.content);
-        console.log("🚀 ~ res:", res);
       })
       .catch((err) => {
         console.log("🚀 ~ err:", err);
       });
   }, []);
 
-
   const renderHistory = () => {
     if (userInfo.length !== 0) {
       return userInfo.thongTinDatVe.map((item) => {
-        return <tr>
-        <td>{item.maVe}</td>
-        <td>{item.tenPhim}</td>
-        <td>{moment(item.ngayDat).format("DD/MM/YYYY : hh:mm")}</td>
-        <td>{item.danhSachGhe.map((dsGhe,index) => { 
-            return <span key={index}> {dsGhe.tenGhe} </span>
-         })} </td>
-        <td>{item.danhSachGhe[0].tenHeThongRap}</td>
-    </tr>
-          
+        return (
+          <tr>
+            <td>{item.maVe}</td>
+            <td>{item.tenPhim}</td>
+            <td>{moment(item.ngayDat).format("DD/MM/YYYY : hh:mm")}</td>
+            <td>
+              {item.danhSachGhe.map((dsGhe, index) => {
+                return <span key={index}> {dsGhe.tenGhe} </span>;
+              })}{" "}
+            </td>
+            <td>{item.danhSachGhe[0].tenHeThongRap}</td>
+          </tr>
+        );
       });
     }
   };
@@ -49,24 +49,10 @@ export default function HistoryBooking() {
         <p className="text-2xl text-white font-bold text-center py-5">
           History Booking
         </p>
-        {/* <ul>
-          <li className="header flex text-center justify-between rounded">
-            <div className="">ID TICKET</div>
-            <div className="">FLIM</div>
-            <div className="">DATE</div>
-            <div className="">SEAT</div>
-            <div className="">CINEMA</div>
-          </li>
-          {renderHistory()}
-         
-
-
-
-
-        </ul> */}
+       
 
         <table className="table content-table text-xl text-center overflow-hidden bg-white w-full">
-          <thead className="text-center"> 
+          <thead className="text-center">
             <tr>
               <th>ID TICKET</th>
               <th>FLIM</th>
@@ -77,11 +63,7 @@ export default function HistoryBooking() {
           </thead>
           <tbody>
             {renderHistory()}
-            {/* <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-            </tr> */}
+           
           </tbody>
         </table>
       </div>

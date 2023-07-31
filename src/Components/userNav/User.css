@@ -1,0 +1,6 @@
+.ant-drawer .ant-drawer-close{
+   display: none;
+ }
+ :where(.css-dev-only-do-not-override-1jr9qlj).ant-drawer .ant-drawer-header{
+ border-bottom: 1px solid #fff;
+ }

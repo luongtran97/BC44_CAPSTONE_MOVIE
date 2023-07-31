@@ -10,7 +10,6 @@ export default function Register() {
   const navigate = useNavigate()
   const onFinish = (value) => {
    let cloneValue={...value,maNhom:"03"}
-    console.log("🚀 ~ cloneValue:", cloneValue)
     https.post("api/QuanLyNguoiDung/DangKy",cloneValue).then((res) => { 
       console.log("🚀 ~ res:", res)
       message.success("Tạo tài khoản thành công!")
@@ -83,7 +82,7 @@ export default function Register() {
                 },
                 {
                   pattern: regex.phone,
-                  message: "Please input a valid phone number",
+                  message: "Please input a valid Phone Number",
                 },
               ]}
             >
@@ -94,7 +93,7 @@ export default function Register() {
               rules={[
                 {
                   required: true,
-                  message: "Please input your Name!",
+                  message: "Please input Your Name!",
                 },
                 {
                   whitespace: true,

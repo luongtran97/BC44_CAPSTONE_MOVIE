@@ -1,0 +1,24 @@
+.user{
+   background: linear-gradient(to right, rgb(252, 92, 125), rgb(106, 130, 251));
+
+}
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-form-item .ant-form-item-explain-error{
+    color: white;
+    font-size: 20px;
+}
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-col-8{
+    display: inline-block;
+}
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-btn.ant-btn-lg{
+    width: 100%;
+    background-color: rgb(234 88 13);
+    border-color: none !important; 
+}
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-input-disabled, :where(.css-dev-only-do-not-override-1jr9qlj).ant-input[disabled]{
+    color: #fff;
+    background: #000;
+    font-size: 16px;
+}
+:where(.css-dev-only-do-not-override-1jr9qlj).ant-input{
+    font-size: 16px;
+}
